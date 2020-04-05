@@ -1,5 +1,6 @@
 import pyperclip
 import time
+import re
 
 REPLACEMENTS = {
     '===': '≡',     # Logically equivalent
@@ -10,7 +11,7 @@ REPLACEMENTS = {
     '<->': '↔',     # Iff 
     '->': '→',      # Implies
     '=>': '⇒',      # Implies/equals
-    '~ee': '∉',     # Is an element of 
+    '~ee': '∉',     # Is not an element of 
     'ee': '∈',      # Is an element of 
     '!': '~',       # Not
     '/\\': '∧',     # And
