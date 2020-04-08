@@ -227,7 +227,7 @@ class CLI:
 
             # Filter blank input
             if userInput:
-                command = get_command(userInput)
+                command = getCommand(userInput)
 
                 if command:
                     # Execute the command
@@ -257,16 +257,16 @@ def welcome():
 ''')
 
 """Convert the given str expression using the shortcuts in REPLACEMENTS."""
-def convert_symbols(expression):
-    converted_expression = expression
+def convertSymbols(expression):
+    convertedExpression = expression
 
-    for i in REPLACEMENTS:
-        converted_expression = converted_expression.replace(i, REPLACEMENTS[i])
+    for r in REPLACEMENTS:
+        convertedExpression = convertedExpression.replace(r, REPLACEMENTS[r])
 
-    return converted_expression
+    return convertedExpression
 
 """If s matches the reSyntax for a command in COMMANDS, return what command, else False."""
-def get_command(s):
+def getCommand(s):
     for command in COMMANDS:
         if re.match(command['reSyntax'], command):
             return command
@@ -294,7 +294,7 @@ def main():
     # expression = None
     # while expression != 'done':
     #     expression = input('Enter text to convert: ')
-    #     command = get_command(expression)
+    #     command = getCommand(expression)
 
     #     # Show list of replacements
     #     if expression.lower() == 'help':
